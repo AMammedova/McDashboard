@@ -8,7 +8,24 @@
     font-family: Inter;
   }
 }
+*::-webkit-scrollbar {
+  width: 4px;
+}
 
+
+
+*::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #626B82;
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #626B82;
+}
 input:focus {
   outline: none !important;
   box-shadow: inherit !important;
@@ -21,4 +38,7 @@ input{
 }
 body{
   overflow: hidden;
+}
+.apexcharts-legend{
+  right: 15px !important;
 }

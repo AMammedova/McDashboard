@@ -1,16 +1,13 @@
 import React, { useEffect } from "react";
 import useSWR, { mutate } from "swr";
 import { GetAll } from "../../api";
+import { subDays, format } from 'date-fns';
 import Spinner from "../Spinner";
 const GoogleLinks = ({ value, id, name }) => {
+  const startDate = value?.startDate || format(subDays(new Date(), 7), 'yyyy-MM-dd');
+  const endDate = value?.endDate || format(new Date(), 'yyyy-MM-dd');
   const { data, error, isLoading } = useSWR(
-    value.startDate &&
-      value.endDate &&
-      `${
-        id === "1"
-          ? "/api/Dashboard/GetGoogleLinkReport"
-          : "api/Dashboard/GetAppleLinkReport"
-      }`,
+    `${id === '1' ? '/api/Dashboard/GetGoogleLinkReport?StartDate=' : '/api/Dashboard/GetAppleLinkReport?StartDate='}${startDate}&EndDate=${endDate}`,
     (key) => GetAll.user(key)
   );
   console.log(data, "data");

@@ -16,3 +16,14 @@ const instance = axios.create({
       return data;
     },
   };
+  export const LoginApi = {
+    user: async (
+      path,arg
+
+    ) => {
+      const { data } = await instance.post(path,arg);
+  
+      return data;
+    },
+  };
+  

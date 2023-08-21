@@ -6,7 +6,11 @@ module.exports = {
   ],
   darkMode: '',
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        '3xl': '1600px',
+      },
+    },
   },
   plugins: [],
 }

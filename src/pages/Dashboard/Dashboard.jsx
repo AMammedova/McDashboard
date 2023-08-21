@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Datepicker from "react-tailwindcss-datepicker";
 import DashboardBody from "../../components/DashboardBody";
+import { subDays, format } from "date-fns";
 const Dashboard = () => {
+  const defaultStartDate = format(subDays(new Date(), 7), 'yyyy-MM-dd');
+  const defaultEndDate = format(new Date(), 'yyyy-MM-dd');
   const [value, setValue] = useState({
-    startDate: "",
-    endDate: "",
+    startDate: defaultStartDate,
+    endDate: defaultEndDate,
+
   });
 
   const handleValueChange = (newValue) => {
@@ -12,7 +16,7 @@ const Dashboard = () => {
     setValue(newValue);
   };
 
-console.log(value?.startDate, "value");
+
   return (
     <React.Fragment>
       <div className="w-[100%] flex items-center justify-between mx-auto px-4 py-3">

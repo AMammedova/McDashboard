@@ -13,9 +13,7 @@ const App = () => {
           index
           path="/"
           element={
-            <Layout>
-              <Dashboard />
-            </Layout>
+            <Login />
           }
         />
         <Route

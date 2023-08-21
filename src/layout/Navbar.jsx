@@ -52,18 +52,18 @@ const Navbar = () => {
       icon: <img src="/walleticon.svg" alt="" className="w-6 h-6" />,
       
     },
-    {
-      name: t("geopush"),
-      path: "",
-      icon: <img src="/geopushicon.svg" alt="" className="w-6 h-6" />,
+    // {
+    //   name: t("geopush"),
+    //   path: "",
+    //   icon: <img src="/geopushicon.svg" alt="" className="w-6 h-6" />,
      
-    },
-    {
-      name: "Merchants",
-      path: "/merchants",
-      icon: <img src="/earth.svg" alt="" className="w-6 h-6" />,
+    // },
+    // {
+    //   name: "Merchants",
+    //   path: "/merchants",
+    //   icon: <img src="/earth.svg" alt="" className="w-6 h-6" />,
      
-    },
+    // },
   ];
 
   return (

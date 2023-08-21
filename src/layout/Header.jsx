@@ -31,8 +31,8 @@ const Header = () => {
       <img src="/wpicon.svg" alt="" />
       <div className="object-cover w-1/3 flex items-center justify-end">
       {/* <Switcher/> */}
-        <img src="/settingsicon.svg" className="w-8 h-8 m-2 cursor-pointer" alt="" />
-        <img src="/exiticon.svg" className="w-8 h-8 m-2 cursor-pointer" alt="" />
+        {/* <img src="/settingsicon.svg" className="w-8 h-8 m-2 cursor-pointer" alt="" />
+        <img src="/exiticon.svg" className="w-8 h-8 m-2 cursor-pointer" alt="" /> */}
       </div>
     </div>
   );

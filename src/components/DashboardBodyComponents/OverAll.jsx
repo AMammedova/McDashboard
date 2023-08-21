@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
 import useSWR, { mutate } from "swr";
 import { GetAll } from "../../api";
+import { subDays, format } from 'date-fns';
 import Spinner from "../Spinner";
 const OverAll = ({ value }) => {
-  console.log("overr");
+const startDate = value?.startDate || format(subDays(new Date(), 7), 'yyyy-MM-dd');
+  const endDate = value?.endDate || format(new Date(), 'yyyy-MM-dd');
 
   const { data, error, isLoading } = useSWR(
-    value.startDate &&
-      value.endDate &&
-      `/api/Dashboard/GetOverallReport?StartDate=${value?.startDate}&EndDate=${value?.endDate}`,
+    `/api/Dashboard/GetOverallReport?StartDate=${startDate}&EndDate=${endDate}`,
     (key) => GetAll.user(key)
   );
   console.log(data, "data");
